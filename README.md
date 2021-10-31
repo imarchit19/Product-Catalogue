@@ -29,3 +29,22 @@ b. Exit Frontend
 
     - npm install
     - ng serve (Running at PORT - 4200)
+
+c. Outputs
+
+- Home (User)
+
+<img src="https://user-images.githubusercontent.com/31448375/139572697-946eaa0d-d638-42f2-aa36-f79f02df522c.png" width="520" height="440" />
+
+- User Login
+
+<img src="https://user-images.githubusercontent.com/31448375/139572716-6c2465a2-8be8-4fb4-8af2-b886217c5dea.png" width="620" height="300" />
+
+- Product View (User)
+
+<img src="https://user-images.githubusercontent.com/31448375/139572721-3cb07a6d-137a-4939-a194-8725ff277a7b.png" width="580" height="440" />
+
+- Create Product (Admin)
+
+<img src="https://user-images.githubusercontent.com/31448375/139572719-081f68fb-61fe-4b16-b8b7-6d37e99ec8af.png" width="620" height="340" />
+
