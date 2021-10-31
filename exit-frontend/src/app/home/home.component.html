@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div *ngIf="info.token; else loggedOut">
+    <div class="row">
+      <div class="col-3">
+        <app-items></app-items>
+      </div>
+      <div class="col-9">
+        <div class="row">
+          <app-search-product-by-category class="col-sm"></app-search-product-by-category>
+          <app-search-item class="col-sm"></app-search-item>
+          <app-search-product-by-id class="col-sm"></app-search-product-by-id>
+        </div>
+        <app-popular></app-popular>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #loggedOut>
+    <div class="container text-center">
+      <br>
+      <div class="row">
+        <div class="col-5"></div>
+        <div class="col-5">
+          <app-login></app-login>
+        </div>
+        <div class="col-2"></div>
+      </div>
+    </div>
+  </ng-template>
+</div>

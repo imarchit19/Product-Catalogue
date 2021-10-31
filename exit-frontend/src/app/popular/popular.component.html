@@ -1,0 +1,28 @@
+<div class="text-center">
+  <div class="col text-right">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Filter By</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button (click)="orderByPriceLH()" ngbDropdownItem>By Price - Low to High</button>
+        <button (click)="orderByPriceHL()" ngbDropdownItem>By Price - High to Low</button>
+        <button (click)="orderByPopularity()" ngbDropdownItem>By Popularity</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3" *ngFor="let item of items; let i=index">
+      <a routerLink="/item/{{items[i].itemId}}">
+        <div class="card bg-light">
+          <div class="card-body">
+            <img src="{{items[i].itemImage}}" alt="{{items[i].itemName}}">
+            <br>
+            <h4>{{items[i].itemName}}</h4>
+            <p> {{"₹"}}{{ item.itemPrice }}</p>
+            <strong class="text-info" style="font-size: small">Last accessed at
+              {{items[i].lastAccessed | date: 'HH:mm dd/MM/yyyy'}}</strong>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="container-fluid mt-5 col-sm-12">
+    <input #searchBox class="form-control" (input)="search(searchBox.value)" placeholder="Search via Brand 🔍">
+  
+    <ul class="search-result">
+      <li *ngFor="let item of items$ | async" (click)="search('')">
+        <a routerLink="/item/{{item.itemId}}" (click)="searchBox.value = ''">
+          {{item.itemName}}
+        </a>
+      </li>
+    </ul>
+  </div>

@@ -1,0 +1,20 @@
+<div>
+  <div class="btn-group col-sm" role="group" aria-label="Item Categories">
+    <button type="button" class="btn btn-secondary" (click)="getAllItems()">All</button>
+    <!-- <button type="button" class="btn btn-secondary" *ngFor="let opt of opts"
+      (click)="getAllByCategory(opt.id)">{{opt.name}}</button> -->
+    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">
+      Categories
+    </button>
+    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+      <a class="dropdown-item" *ngFor="let opt of opts"
+      (click)="getAllByCategory(opt.id)">{{opt.name}}</a>
+    </div>
+  </div>
+  <div class="list-group text-center">
+    <a class=" list-group-item-action" *ngFor="let item of items" routerLink="/item/{{item.itemId}}">
+      <h5><span class="badge badge-info">{{item.itemName}} </span></h5>
+    </a>
+  </div>
+</div>

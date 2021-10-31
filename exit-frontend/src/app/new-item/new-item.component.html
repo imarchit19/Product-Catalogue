@@ -1,0 +1,56 @@
+<div class="container-fluid">
+  <h1 class="text-center">Create new item</h1>
+  <div class="row mt-5">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <form name="newItemForm" #f="ngForm" (ngSubmit)="f.form.valid && sendItem()">
+
+        <div class="form-group my-3">
+          <label for="itemNameInputField">Enter item name:</label>
+          <input type="text" class="form-control" id="itemNameInputField" placeholder="Item name"
+            [(ngModel)]="model.itemName" name="itemNameInputField" #name="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required />
+          <div *ngIf="f.submitted && name.invalid" class="invalid-input">
+            <div *ngIf="name.errors?.required">Name is not valid</div>
+          </div>
+        </div>
+
+        <div class="form-group my-3">
+          <label for="itemCategoryControlSelect">Select category: </label>
+          <select class="form-control" (change)="filterCategory($any($event.target).value)" id="itemCategoryControlSelect">
+            <option *ngFor="let opt of opts" [value]="opt.id">{{opt.name}}</option>
+          </select>
+        </div>
+
+        <div class="form-group my-3">
+          <label for="descriptionsTextArea">Enter descriptions:</label>
+          <textarea class="form-control" id="descriptionsTextArea" rows="8" [(ngModel)]="model.descriptions"
+            name="descriptionsTextArea" #descriptions="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && descriptions.invalid }" required minlength="10"></textarea>
+          <div *ngIf="f.submitted && descriptions.invalid" class="invalid-input">
+            <div *ngIf="descriptions.errors?.required">Field is required</div>
+            <div *ngIf="descriptions.errors?.minlength">Field is too small (needs more than 10 characters)</div>
+          </div>
+        </div>
+
+        <div class="form-group my-3">
+          <label for="brandTextArea">Brand:</label>
+          <textarea class="form-control" id="brandTextArea" rows="1" [(ngModel)]="model.brand"
+            name="brandTextArea"></textarea>
+        </div>
+
+        <div class="container-fluid my-5">
+          <div class="row">
+            <div class="col-7"></div>
+            <div class="col"></div>
+            <div class="col">
+              <button type="submit" class="btn btn-info">Add item</button>
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>

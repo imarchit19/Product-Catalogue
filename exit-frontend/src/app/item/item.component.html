@@ -1,0 +1,133 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3">
+      <app-items></app-items>
+    </div>
+    <div class="col-9">
+      <div class="row">
+        <app-search-product-by-category class="col-sm"></app-search-product-by-category>
+        <app-search-item class="col-sm"></app-search-item>
+        <app-search-product-by-id class="col-sm"></app-search-product-by-id>
+      </div>
+      <br />
+      <h1 class="display-4 text-center">{{ item.itemName }}</h1>
+      <br>
+      <div class="media">
+        <img class="align-self-start mr-4" src="{{ item.itemImage }}" alt="Generic placeholder image">
+        <div class="media-body">
+          <h5>Price: <span class="badge badge-info">{{"₹"}}{{ item.itemPrice }}</span></h5>
+          <h5>Brand: <span class="badge badge-primary">{{brand[0]}}</span></h5>
+          <div>
+            <h5>Description:</h5>
+            <div>
+              <p *ngFor="let inst of descriptions; let i=index">{{"➡ "}}{{ inst }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="">Enter Pincode</span>
+          </div>
+          <input type="text" class="form-control" id="itemNamePincodeField" placeholder="Enter Pincode"
+            name="itemNameInputField" required />
+          <button (click)="checkPincode()" type="button" class="btn btn-info">Check</button>
+        </div>
+        <br>
+        <h5><span id="delivery" class="badge badge-warning"></span></h5>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-2">
+          <button type="button" class="btn btn-info">
+            <a routerLink="/update_item/{{ item.itemId }}" style="text-decoration: none; color: white">Update
+              item</a>
+          </button>
+        </div>
+        <div class="col-10">
+          <button type="button" class="btn btn-danger" (click)="deleteThisItem()">
+            Delete item
+          </button>
+        </div>
+      </div>
+      <br />
+      <p class="text-right font-italic">
+        Item last accessed on
+        {{ item.lastAccessed | date: "dd MMM yyyy HH:mm:ss" }}
+      </p>
+      <br />
+      <p class="text-right">
+        Number of times accessed: {{ item.noOfTimesAccessed }}
+      </p>
+      <br />
+    </div>
+  </div>
+</div>
+
+<!-- <div class="container-fluid">
+  <div class="row">
+    <div class="col-3">
+      <app-items></app-items>
+    </div>
+    <div class="col-9">
+      <div class="row">
+        <app-search-product-by-category class="col-sm"></app-search-product-by-category>
+        <app-search-item class="col-sm"></app-search-item>
+        <app-search-product-by-id class="col-sm"></app-search-product-by-id>
+      </div>
+      <br />
+      <h1 class="display-4 text-center">{{ item.itemName }}</h1>
+      <div class="img-product">
+        <img src="{{ item.itemImage }}" alt="" />
+      </div>
+      <br>
+      <div>
+        <label for="itemNamePincodeField">Enter Pincode:</label>
+        <input  type="text" class="form-control" id="itemNamePincodeField" placeholder="Enter Pincode" name="itemNameInputField" required />
+        <br>
+        <button (click)="checkPincode()" type="button" class="btn btn-info">Check</button>
+        <p id="delivery"></p>
+      </div>
+      <br />
+      <h4>Price:</h4>
+      {{"₹"}}{{ item.itemPrice }}
+      <br />
+      <br />
+      <h4>Description:</h4>
+      <div class="border border-light rounded">
+        <p *ngFor="let inst of descriptions; let i=index">{{[i + 1]}}{{"."}}{{ inst }}</p>
+      </div>
+      <br />
+      <h4>Brand:</h4>
+      <div class="border border-light rounded">
+        <p *ngFor="let sug of brand">{{ sug }}</p>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-2">
+          <button type="button" class="btn btn-info">
+            <a routerLink="/update_item/{{ item.itemId }}" style="text-decoration: none; color: white">Update
+              item</a>
+          </button>
+        </div>
+        <div class="col-10">
+          <button type="button" class="btn btn-danger" (click)="deleteThisItem()">
+            Delete item
+          </button>
+        </div>
+      </div>
+      <br />
+      <p class="text-right font-italic">
+        Item last accessed on
+        {{ item.lastAccessed | date: "dd MMM yyyy HH:mm:ss" }}
+      </p>
+      <br />
+      <p class="text-right">
+        Number of times accessed: {{ item.noOfTimesAccessed }}
+      </p>
+      <br />
+    </div>
+  </div>
+</div> -->

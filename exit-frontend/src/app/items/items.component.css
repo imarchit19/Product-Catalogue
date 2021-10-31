@@ -1,0 +1,13 @@
+.btn {
+  border-radius: 0%;
+  border-style: solid;
+}
+
+.list-group {
+  border-style: solid;
+  background-color: #F4EBD0;
+}
+
+.list-group-item-action {
+  padding: 8px 2px;
+}

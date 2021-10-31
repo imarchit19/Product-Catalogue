@@ -1,0 +1,21 @@
+a{
+  text-decoration:none;
+}
+
+.card {
+  margin: 1vw 0;
+  background-color: #189AB4;
+}
+
+.card-body {
+  padding: 1vw 0;
+}
+
+img{
+  width: 75%;
+  border-radius: 5%;
+}
+
+h4{
+  margin: 1vw 0;
+}
